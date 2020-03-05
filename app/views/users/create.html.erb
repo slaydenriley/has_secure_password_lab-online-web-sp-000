@@ -1,4 +1,12 @@
-<% form_tag ({:UsersController action:"/create" method="POST"}) %>
-  <input name="username">
-  <input name="password">
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "create" %>
 <% end %>
